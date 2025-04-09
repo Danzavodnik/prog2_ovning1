@@ -19,10 +19,10 @@ public class Book extends Item implements PriceableWithVAT6{
     @Override
     public double getPrice(){
         if(bound){
-            return (price * getVAT()) + (1 * 0.3);
+            return price * (getVAT()/100) + (1 * 0.3);
         }
 
-        return price + (1 * getVAT());
+        return price + (1 * getVAT()/ 100);
     }
     
     public boolean getBound(){

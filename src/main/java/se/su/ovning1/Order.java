@@ -41,16 +41,14 @@ public class Order{
 
         receipt.append("Order No#").append(this.orderNumber).append(" Summary:\n");
 
-
-
         for(Item item : orderedItems){
             receipt.append(item.getName())
                 .append("\n Price: ").append(item.getPrice())
-                .append("VAT:").append(item.getVAT()).append("%\n");
+                .append(" VAT:").append(item.getVAT()).append("%\n");
         }
 
         receipt.append("\nTotal value excl VAT: ").append(getTotalValue())
-        .append("\nTotal value incl VAT: ").append(getTotalValuePlusVAT());
+        .append("\nTotal value incl VAT: ").append(getTotalValuePlusVAT()).append("\n ---------------------------");
 
         return receipt.toString();
     }

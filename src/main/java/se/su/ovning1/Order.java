@@ -43,22 +43,26 @@ public class Order{
         receipt.append("Order No#").append(this.getOrderNumber()).append(" Summary:\n");
 
         for(Item item : orderedItems){
-            
 
             if(item instanceof Book book){
-                receipt.append("Bound: ").append(book.getBound());
+                receipt.append(item.toString());
             }
 
             if(item instanceof Recording recording){
-                receipt.append(recording.getType())    
-                    .append(": ").append(recording.getName()).append(" - ")
-                    .append(recording.getArtist()).append(", Year: ")
-                    .append(recording.getYear()).append(", Condition: ")
-                    .append(recording.getCondition()).append(", Orignial price: ")
+
+                // receipt.append(recording.getType())    
+                //     .append(": ").append(recording.getName()).append(" - ")
+                //     .append(recording.getArtist()).append(", Year: ")
+                //     .append(recording.getYear()).append(", Condition: ")
+                //     .append(recording.getCondition()).append(", Orignial price: ")
+
+                receipt.append(recording.toString())
+                    .append(", orignial price: ")
+
                     .append(recording.getOriginalPrice());
             }
 
-            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPrice()).append(")")
+            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPriceWithVAT()).append(")")
             .append("\n VAT: ").append(item.getVAT()).append("%\n");
         }
 

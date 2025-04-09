@@ -9,7 +9,8 @@ public class LongPlay extends Recording{
         return "LP";
     }
 
+    @Override
     public double getPrice(){
-        return (getPrice() * getCondition() + (2025 - getYear()) * 5.0);
+        return getPrice() * getCondition() + ((2025 - getYear()) * 5.0);
     }
 }

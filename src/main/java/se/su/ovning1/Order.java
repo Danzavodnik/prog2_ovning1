@@ -56,7 +56,7 @@ public class Order{
                     .append(recording.getOriginalPrice());
             }
 
-            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPrice()).append(")")
+            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPriceWithVAT()).append(")")
             .append("\n VAT: ").append(item.getVAT()).append("%\n");
         }
 

@@ -15,6 +15,7 @@ public class Order{
         
         for(Item item : items){
             this.orderedItems.add(item);
+            this.orderNumber = counter++;
         }
     }
 

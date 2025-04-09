@@ -38,11 +38,11 @@ public class Order{
         StringBuilder receipt = new StringBuilder();
 
         receipt.append("Order Summary:\n");
-
+        
 
         for(Item item : orderedItems){
             receipt.append(item.getName())
-                .append("Price: ").append(item.getPrice())
+                .append("\n Price: ").append(item.getPrice())
                 .append("VAT:").append(item.getVAT()).append("%\n");
         }
 

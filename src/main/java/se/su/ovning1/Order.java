@@ -30,7 +30,7 @@ public class Order{
     public double getTotalValuePlusVAT(){
         double total = 0;
         for(Item item : orderedItems){
-            total += item.getPrice() * (1 + item.getVAT());
+            total += item.getPrice() * (1 + item.getVAT() / 100);
         }
         return total;
     }

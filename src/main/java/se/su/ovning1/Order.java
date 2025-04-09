@@ -2,20 +2,18 @@ package se.su.ovning1;
 
 import java.util.ArrayList;
 
-
-
 public class Order{
 
     private long orderNumber;
-    private long counter;
+    private long counter = 1;
     private ArrayList<Item> orderedItems;
 
     public Order(Item... items){
         this.orderedItems = new ArrayList<>();
-        
+        this.orderNumber = counter++;
+
         for(Item item : items){
             this.orderedItems.add(item);
-            this.orderNumber = counter++;
         }
     }
 
@@ -35,17 +33,20 @@ public class Order{
         return total;
     }
 
+    private long getOrderNumber(){
+        return orderNumber;
+    }
+
     public String getReceipt(){
         StringBuilder receipt = new StringBuilder();
 
-
-        receipt.append("Order No#").append(this.orderNumber).append(" Summary:\n");
+        receipt.append("Order No#").append(this.getOrderNumber()).append(" Summary:\n");
 
         for(Item item : orderedItems){
             receipt.append("\n").append(item.getName()).append(", ");
 
             if(item instanceof Book book){
-                receipt.append(book.getBound());
+                receipt.append("Bound: ").append(book.getBound());
             }
 
             if(item instanceof Recording recording){

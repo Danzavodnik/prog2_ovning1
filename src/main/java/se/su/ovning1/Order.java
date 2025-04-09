@@ -49,9 +49,10 @@ public class Order{
             }
 
             if(item instanceof Recording recording){
-                receipt.append(recording.getArtist()).append(", ")
-                    .append(recording.getYear()).append(", ")
-                    .append(recording.getCondition());
+                receipt.append(recording.getArtist()).append(", year: ")
+                    .append(recording.getYear()).append(", condition: ")
+                    .append(recording.getCondition()).append(", orignial price: ")
+                    .append(recording.getOriginalPrice());
             }
 
             receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPrice()).append(")")

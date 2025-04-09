@@ -3,9 +3,9 @@ package se.su.ovning1;
 public class Main {
     public static void main(String[] args) {
 
-        Item book1 = new Book("A guide to modern jazz", "Unknown author", 100, false);
-        Item book2 = new Book("Beethoven: a biography", "Holmqvist", 400, false);
-        Item book2bound = new Book("Beethoven: a biography", "Holmqvist", 400, true);
+        Item book1 = new Book("A guide to modern jazz", "Unknown author", false, 100);
+        Item book2 = new Book("Beethoven: a biography", "Holmqvist", true, 400);
+        Item book2bound = new Book("Beethoven: a biography", "Holmqvist", false, 400);
 
         Item item1 = new LongPlay("Giant Steps", "John Coltrane", 1959, 10, 100);
         Item cd2 = new CompactDisc("Kind of Blue", "Miles Davis", 1959, 5, 100);

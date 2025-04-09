@@ -43,7 +43,7 @@ public class Order{
         for(Item item : orderedItems){
             receipt.append(item.getName())
                 .append("Price: ").append(item.getPrice())
-                .append("VAT:").append(item.getVAT().append("%\n"));
+                .append("VAT:").append(item.getVAT()).append("%\n");
         }
 
         receipt.append("\nTotal value excl VAT: ").append(getTotalValue())

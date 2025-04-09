@@ -42,9 +42,20 @@ public class Order{
         receipt.append("Order No#").append(this.orderNumber).append(" Summary:\n");
 
         for(Item item : orderedItems){
-            receipt.append(item.getName())
-                .append("\n Price: ").append(item.getPrice())
-                .append(" VAT:").append(item.getVAT()).append("%\n");
+            receipt.append("\n").append(item.getName()).append(", ");
+
+            if(item instanceof Book book){
+                receipt.append(book.getBound());
+            }
+
+            if(item instanceof Recording recording){
+                receipt.append(recording.getArtist()).append(", ")
+                    .append(recording.getYear()).append(", ")
+                    .append(recording.getCondition());
+            }
+
+            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPriceWithVAT()).append(")")
+            .append("\n VAT: ").append(item.getVAT()).append("%\n");
         }
 
         receipt.append("\nTotal value excl VAT: ").append(getTotalValue())

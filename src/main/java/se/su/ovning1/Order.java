@@ -43,20 +43,18 @@ public class Order{
         receipt.append("Order No#").append(this.getOrderNumber()).append(" Summary:\n");
 
         for(Item item : orderedItems){
-            receipt.append("\n").append(item.getName()).append(", ");
 
             if(item instanceof Book book){
-                receipt.append("Bound: ").append(book.getBound());
+                receipt.append(item.toString());
             }
 
             if(item instanceof Recording recording){
-                receipt.append(recording.getArtist()).append(", year: ")
-                    .append(recording.getYear()).append(", condition: ")
-                    .append(recording.getCondition()).append(", orignial price: ")
+                receipt.append(recording.toString())
+                    .append(", orignial price: ")
                     .append(recording.getOriginalPrice());
             }
 
-            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPrice()).append(")")
+            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPriceWithVAT()).append(")")
             .append("\n VAT: ").append(item.getVAT()).append("%\n");
         }
 

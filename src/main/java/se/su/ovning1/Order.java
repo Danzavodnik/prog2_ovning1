@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Order{
 
     private long orderNumber;
-    private long counter = 1;
+    private static long counter = 1;
     private ArrayList<Item> orderedItems;
 
     public Order(Item... items){
-        this.orderedItems = new ArrayList<>();
         this.orderNumber = counter++;
+        this.orderedItems = new ArrayList<>();
 
         for(Item item : items){
             this.orderedItems.add(item);
@@ -56,7 +56,7 @@ public class Order{
                     .append(recording.getOriginalPrice());
             }
 
-            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPriceWithVAT()).append(")")
+            receipt.append("\n Price: ").append(item.getPrice()).append(" (").append(item.getPrice()).append(")")
             .append("\n VAT: ").append(item.getVAT()).append("%\n");
         }
 

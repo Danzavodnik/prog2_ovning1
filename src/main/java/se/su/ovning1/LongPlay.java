@@ -5,6 +5,7 @@ public class LongPlay extends Recording{
         super(name, artist, year, condition, price);
     }
 
+    @Override
     public String getType(){
         return "LP";
     }

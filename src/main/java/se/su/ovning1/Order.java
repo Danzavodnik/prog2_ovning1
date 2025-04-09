@@ -37,7 +37,7 @@ public class Order{
     public String getReceipt(){
         StringBuilder receipt = new StringBuilder();
 
-        receipt.append("Order Summary:\n");
+        receipt.append("Order No#").append(this.orderNumber).append(" Summary:\n");
 
 
         for(Item item : orderedItems){

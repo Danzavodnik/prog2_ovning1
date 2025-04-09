@@ -36,7 +36,7 @@ abstract class Recording extends Item implements PriceableWithVAT25{
 
     @Override
     public double getPrice() {
-        return price - (0.1 * condition);
+        return price * (0.1 * condition);
     }
 
     private double getOriginalPrice(){

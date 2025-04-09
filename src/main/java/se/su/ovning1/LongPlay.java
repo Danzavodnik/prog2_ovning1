@@ -10,6 +10,6 @@ public class LongPlay extends Recording{
     }
 
     public double getPrice(){
-        return (price * condition + (2025 - year) * 5.0);
+        return (getPrice() * getCondition() + (2025 - getYear()) * 5.0);
     }
 }

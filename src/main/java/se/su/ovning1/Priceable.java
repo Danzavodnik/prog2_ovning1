@@ -5,6 +5,6 @@ public interface Priceable {
     double getVAT();
 
     default double getPriceWithVAT(){
-        return getPrice() * (1 + getVAT() / 100);
+        return getPrice() * (1 + getVAT());
     }
 }

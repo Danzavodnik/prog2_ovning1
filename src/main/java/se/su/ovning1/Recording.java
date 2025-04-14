@@ -31,12 +31,20 @@ abstract class Recording extends Item implements PriceableWithVAT25{
 
     @Override
     public String toString(){
-        return "Name: " + getName() + ", Artist: " + artist + ", Year: " + year + ", Condition: " + condition;
+        String stringToReturn = null;
+        if(this instanceof CompactDisc compactDisc){
+            stringToReturn = "CD { " + "Name: " + getName() + ", Artist: " + artist + ", Year: " + year + ", Condition: " + condition + ", Orignial price: " + getOriginalPrice() + ", price: " + getPrice() + ", Price + VAT: " + getPriceWithVAT();
+        }
+        if(this instanceof LongPlay longPlay){
+            stringToReturn = "LP { " + "Name: " + getName() + ", Artist: " + artist + ", Year: " + year + ", Condition: " + condition + ", Orignial price: " + getOriginalPrice() + ", price: " + getPrice() + ", Price + VAT: " + getPriceWithVAT();
+        }
+        return stringToReturn;
     }
 
     @Override
     public double getPrice() {
-        return price * (0.1 * condition);
+        double newPrice = price * (0.1 * condition);
+        return Math.max(newPrice, 10);
     }
 
     protected double getOriginalPrice(){

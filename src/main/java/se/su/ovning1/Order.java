@@ -28,7 +28,7 @@ public class Order{
     public double getTotalValuePlusVAT(){
         double total = 0;
         for(Item item : orderedItems){
-            total += item.getPrice() * (1 + item.getVAT() / 100);
+            total += item.getPrice() * (1 + item.getVAT());
         }
         return total;
     }
@@ -49,12 +49,6 @@ public class Order{
             }
 
             if(item instanceof Recording recording){
-
-                // receipt.append(recording.getType())    
-                //     .append(": ").append(recording.getName()).append(" - ")
-                //     .append(recording.getArtist()).append(", Year: ")
-                //     .append(recording.getYear()).append(", Condition: ")
-                //     .append(recording.getCondition()).append(", Orignial price: ")
 
                 receipt.append(recording.toString())
                     .append(", orignial price: ")

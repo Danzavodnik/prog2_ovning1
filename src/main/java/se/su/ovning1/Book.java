@@ -12,10 +12,13 @@ public class Book extends Item implements PriceableWithVAT6{
         this.price = price;    
     }
 
-    public String getType(){
-        return "Book";
+    public Book(String name, String author, double price ,boolean bound){
+        super(name);
+        this.author = author;
+        this.bound = bound;
+        this.price = price;
     }
-        
+
     @Override
     public double getPrice(){
         if(bound){
@@ -24,16 +27,8 @@ public class Book extends Item implements PriceableWithVAT6{
 
         return price;
     }
-    
-    public boolean getBound(){
-            return bound;
-    }
-
-    public String getAuthor(){
-            return author;
-    }
 
     public String toString(){
-        return "Name: "+ getName() + ", Author: " + getAuthor() + ", Bound: " + getBound();
+        return "Name: "+ getName() + ", Author: " + author + ", Price: " + getPrice() + ", Bound: " + bound;
     }
 }

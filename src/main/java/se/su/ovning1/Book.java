@@ -29,6 +29,6 @@ public class Book extends Item implements PriceableWithVAT6{
     }
 
     public String toString(){
-        return "Name: "+ getName() + ", Author: " + author + ", Price: " + getPrice() + ", Bound: " + bound;
+        return "Book { " + "Name: "+ getName() + ", Author: " + author + ", Price: " + getPrice() + ", Bound: " + bound;
     }
 }
